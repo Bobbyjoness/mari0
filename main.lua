@@ -7,6 +7,8 @@
 	NOW GO AWAY (or stay and modify shit. I don't care as long as you stick to the above license.)
 ]]
 
+require('cindy').applyPatch()
+
 function love.load()
 	marioversion = 1006
 	versionstring = "version 1.6"
@@ -46,8 +48,8 @@ function love.load()
 		error("You have an outdated version of Love! Get 0.10.1 or higher and retry.")
 	end
 	
-	iconimg = love.graphics.newImage("graphics/icon.png")
-	love.window.setIcon(iconimg:getData())
+	icon = love.image.newImageData( "graphics/icon.png" )
+	love.window.setIcon(icon)
 	
 	love.graphics.setDefaultFilter("nearest", "nearest")
 	
