@@ -2708,6 +2708,7 @@ function game_keypressed(key, unicode)
 	end
 
 	for i = 1, players do
+						
 		if controls[i]["jump"][1] == key then
 			objects["player"][i]:jump()
 		elseif controls[i]["run"][1] == key then
@@ -3846,7 +3847,7 @@ end
 function playsound(sound)
 	if soundenabled then
 		sound:stop()
-		sound:rewind()
+		sound:seek(0)
 		sound:play()
 	end
 end
